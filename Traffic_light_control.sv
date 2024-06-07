@@ -129,7 +129,7 @@ module Time_counter(
     output logic A, B
 );
 
-    logic [19:0] cal;
+    logic [22:0] cal;
     logic signal_out;
       
     Ring_counter Ring_counter (.*);
@@ -142,19 +142,19 @@ module Time_counter(
             cal <= 0;
             A <= 0;
             B <= 0;
-        end else if (cal == 2000-1) begin 
+        end else if (cal == 200000-1) begin 
             A <= 1;
             B <= 0;
             cal <= cal + 1;
-        end else if (cal == 4000-1) begin 
+        end else if (cal == 400000-1) begin 
             A <= 1;
             B <= 0;
             cal <= cal + 1;
-        end else if (cal == 25000-1) begin 
+        end else if (cal == 2500000-1) begin 
             A <= 1;
             B <= 0;
             cal <= cal + 1;
-        end else if (cal == 30000-1) begin 
+        end else if (cal == 3000000-1) begin 
             cal <= 0;
             A <= 1;
             B <= 1;
